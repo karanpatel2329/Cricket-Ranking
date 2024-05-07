@@ -14,7 +14,7 @@ class InfoHeadingWidget extends StatelessWidget {
     if(isTeam){
    return Container(
       color: AppColors.grey,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Row(
         children: [
           SizedBox(
@@ -48,7 +48,7 @@ class InfoHeadingWidget extends StatelessWidget {
     }
     return Container(
       color: AppColors.grey,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Row(
         children: [
           SizedBox(

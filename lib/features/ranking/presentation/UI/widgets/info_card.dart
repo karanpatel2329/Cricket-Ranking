@@ -34,7 +34,7 @@ class InfoCardWidget extends StatelessWidget {
                             rating,
                           )),
                       SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.18,
                           child: Text(
                            points,
                           )),
@@ -58,7 +58,7 @@ class InfoCardWidget extends StatelessWidget {
                             playerName,
                           )),
                       SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.18,
                           child: Text(
                            points,
                           )),

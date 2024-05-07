@@ -57,20 +57,59 @@ class RankBloc extends Bloc<RankEvent, RankState> {
         if (event.index == 0) {
           emit(RankLoaded(
               rankModel: event.rankModel,
-              rankType: RankType.ODI_Batsman,
+              rankType: getRankType(event.lastRankType, 0),
               tabIndex: event.index));
         } else if (event.index == 1) {
           emit(RankLoaded(
               rankModel: event.rankModel,
-              rankType: RankType.Test_Batsman,
+              rankType:  getRankType(event.lastRankType, 1),
               tabIndex: event.index));
         } else {
           emit(RankLoaded(
               rankModel: event.rankModel,
-              rankType: RankType.T20_Batsman,
+              rankType: getRankType(event.lastRankType, 2),
               tabIndex: event.index));
         }
       }
     });
+  }
+
+  RankType getRankType(RankType rankType, index) {
+    if(index == 0){
+
+      switch(rankType.toString().split("_").last){
+        case "Bowlers":
+          return RankType.ODI_Bowlers;
+        case "Batsman":
+          return RankType.ODI_Batsman;
+        case "AllRounder":
+          return RankType.ODI_AllRounder;
+        default:
+          return RankType.ODI_Teams;      
+      }
+    }
+    if(index == 1){
+
+      switch(rankType.toString().split("_").last){
+        case "Bowlers":
+          return RankType.Test_Bowlers;
+        case "Batsman":
+          return RankType.Test_Batsman;
+        case "AllRounder":
+          return RankType.Test_AllRounder;
+        default:
+          return RankType.Test_Teams;      
+      }
+    }
+  switch(rankType.toString().split("_").last){
+        case "Bowlers":
+          return RankType.T20_Bowlers;
+        case "Batsman":
+          return RankType.T20_Batsman;
+        case "AllRounder":
+          return RankType.T20_AllRounder;
+        default:
+          return RankType.T20_Teams;      
+      }
   }
 }

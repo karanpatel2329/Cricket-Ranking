@@ -24,9 +24,10 @@ class ChangeRankTypeEvent extends RankEvent {
 
 class ChangeTabEvent extends RankEvent {
   final RankModel rankModel;
+  final RankType lastRankType;
   final int index;
 
-  const ChangeTabEvent({required this.rankModel,required this.index});
+  const ChangeTabEvent({required this.rankModel,required this.index,required this.lastRankType});
 
   @override
   List<Object> get props => [rankModel,index];

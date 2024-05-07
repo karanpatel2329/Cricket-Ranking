@@ -58,7 +58,7 @@ class _RankingScreenState extends State<RankingScreen> {
                   ),
                   centerTitle: true,
                   title: const Text(
-                    'Ranking',
+                    'RANKING',
                     style: TextStyle(color: AppColors.white),
                   ),
                   flexibleSpace: Container(
@@ -75,9 +75,10 @@ class _RankingScreenState extends State<RankingScreen> {
                     labelColor: AppColors.white,
                     unselectedLabelColor: AppColors.white,
                     indicatorColor: AppColors.white,
+                    indicatorSize: TabBarIndicatorSize.tab,
                     onTap: (index) {
                       BlocProvider.of<RankBloc>(context).add(ChangeTabEvent(
-                          rankModel: state.rankModel, index: index));
+                          rankModel: state.rankModel, index: index, lastRankType: state.rankType));
                     },
                     tabs: const [
                       Tab(
